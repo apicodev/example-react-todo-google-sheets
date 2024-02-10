@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-const apicoIntegrationId: string = "<Replace with your integration id>";
-const spreadSheetId: string = "<replace with your google spreadsheet id>";
-const sheetName: string = "Sheet1";
-const sheetId: number = 0; // replace with your sheet/page gid (not sheet name)
+const apicoIntegrationId: string = "<Replace with your apico gsheet integration id>";
+const spreadSheetId: string = "<Replace with your google sheet id>";
+const sheetName: string = "Sheet1"; // replace with your sheet name
+const sheetId: number = 1196872439; // replace with your sheet/page gid (not sheet name)
 // you can look at the URL of your spread sheet in the browser to find the gid
 
 const apiBaseUrl = `https://api.apico.dev/v1/${apicoIntegrationId}/${spreadSheetId}`;
@@ -64,6 +64,13 @@ export const updateSpreadsheetData = async (
 };
 
 export const deleteSpreadsheetRow = async (index: number) => {
+  const range = {
+    sheetId: sheetId,
+    dimension: "ROWS",
+    startIndex: index,
+    endIndex: index+1,
+  };
+  console.log(`deleting row from ${range.startIndex} to ${range.endIndex}`)
   const options: AxiosRequestConfig = {
     method: "POST",
     url: `${apiBaseUrl}:batchUpdate`,
@@ -71,12 +78,7 @@ export const deleteSpreadsheetRow = async (index: number) => {
       requests: [
         {
           deleteDimension: {
-            range: {
-              sheetId: sheetId,
-              dimension: "ROWS",
-              startIndex: index,
-              endIndex: index+1,
-            },
+            range,
           },
         },
       ],

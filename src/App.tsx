@@ -128,8 +128,10 @@ function App() {
             />
             <span className="todo">{t.value}</span>
             <button
+              type="button"
               className="delete-btn"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 removeTodo(t.id);
               }}
             >
