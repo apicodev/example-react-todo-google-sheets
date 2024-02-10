@@ -3,7 +3,8 @@ import axios, { AxiosRequestConfig } from "axios";
 const apicoIntegrationId: string = "<Replace with your integration id>";
 const spreadSheetId: string = "<replace with your google spreadsheet id>";
 const sheetName: string = "Sheet1";
-const sheetId: number = 0; // replace with your sheet/page id (not sheet name)
+const sheetId: number = 0; // replace with your sheet/page gid (not sheet name)
+// you can look at the URL of your spread sheet in the browser to find the gid
 
 const apiBaseUrl = `https://api.apico.dev/v1/${apicoIntegrationId}/${spreadSheetId}`;
 
