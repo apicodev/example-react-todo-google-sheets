@@ -2,7 +2,9 @@
 This example showcases how you can build a simple Todo application with Google sheets as a backend.
 
 
-![Screenshot 2024-02-11 at 12 05 30 AM](https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/1e0d9e05-56ca-4a02-9dc5-915f3c801d7d)
+https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/5c20be45-fd29-41c2-9548-600ef28c18c0
+
+
 
 ## Running the project
 
@@ -62,3 +64,5 @@ const sheetId: number = 1196872439; // replace with your sheet/page gid (not she
 ```
 npm run dev
 ```
+
+![Screenshot 2024-02-11 at 12 05 30 AM](https://github.com/apicodev/example-react-todo-google-sheets/assets/53584487/1e0d9e05-56ca-4a02-9dc5-915f3c801d7d)
